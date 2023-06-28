@@ -1,7 +1,8 @@
-package day0620;
+package day0627;
 
 /**
  * 사람을 대상으로 한 클래스<br>
+ * 사람의 공통 특징을 구현하였다. <br>
  * 명사적 특징 : 눈, 코, 입. 이름 <br>
  * 동사적 특징 : 먹는일 <br>
  * 객체를 생성하여 사용<br>
@@ -16,9 +17,10 @@ public class Person {
 	private String name;
 	
 	public Person () { //생성자 만들기
-		eye=2;
-		nose=1;
-		mouth=1;
+		this(2,1,1);
+//		eye=2;
+//		nose=1;
+//		mouth=1;
 	}
 	
 	/**
@@ -133,6 +135,8 @@ public class Person {
 	public String eat (String menu, int price) { //동사적 특징
 		return name+"이 식당에서 "+menu+"인 음식을 "+price+"원 주고 사먹는다. ";
 	}
+	
+	
 
 
 	 

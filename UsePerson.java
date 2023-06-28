@@ -1,7 +1,8 @@
-package day0620;
+package day0627;
 
 /**
  * person 클래스를 생성하여 사용하는 일.
+ * 
  * @author user
  *
  */
@@ -9,65 +10,61 @@ public class UsePerson {
 
 	/**
 	 * java application
+	 * 
 	 * @param args
 	 *
 	 */
 	public static void main(String[] args) {
-		//객체 생성
-		Person dongwon=new Person();
-//		dongwon.setEye(2);
-//		dongwon.setNose(1);
-//		dongwon.setMouth(1);
-		dongwon.setName("이동원");
-		System.out.printf("눈의 수 %d,코의수 %d, 입의수 %d, 이름 %s\n",
-		
-		          dongwon.getEye(),dongwon.getNose(),dongwon.getMouth() ,
-		          dongwon.getName());
-		//객체가 제공하는 기능을 사용.
-		            System.out.println(dongwon.eat());
-		            System.out.println(dongwon.eat("돈까스",13000));
-		            
-		            //사람 객체를 생성
-		            Person jinban = new Person(3,1,1); //생성자 만들고 파라미터에 값 넣기 
-		            
-//		            jinban.setEye(3);
-//		            jinban.setNose(1);
-//		            jinban.setMouth(1);
-		            jinban.setName("천진반");
-		            
-		            System.out.printf("눈의 수 %d,코의수 %d, 입의수 %d, 이름 %s\n",
-		            		jinban.getEye(), jinban.getNose(),jinban.getMouth(),jinban.getName());
-		            
-		            System.out.println(jinban.eat());
-		            System.out.println(jinban.eat("선두",0));
-		            System.out.println("-----------------------------------------");
-		            //객체 생성
-		            
-		            Person dongwonn = new Person();
-		            
-		            
-		            
-		            //값 할당
-		            dongwonn.setEye(1);
-		            dongwonn.setNose(1);
-		            dongwonn.setMouth(1);
-		            dongwonn.setName("이동원원");
-		            
-		            
-		            
-		            // 객체 사용
-		            
-		            System.out.printf("눈의 수 %d, 코의 수 %d, 입의 수%d, 이름 %s\n", 
-		            		dongwonn.getEye(),dongwonn.getNose(),dongwonn.getMouth(),dongwonn.getName());
-		            
-		           System.out.println(dongwonn.eat());
-		           System.out.println(dongwonn.eat("삼겹살",15000));
-		           
-		            
+		// 객체 생성
+		HongGilDong hgd = new HongGilDong();
+		// 코드의 재사용성 : 부모의 method를 자식에서 자신의 것처럼 사용
+		hgd.setName("홍길동"); // 이름을 부여
+		System.out.printf("눈 : %d, 코 : %d , 입 : %d , 이름 : %s\n", hgd.getEye(), hgd.getNose(), hgd.getMouth(),
+				hgd.getName());
 		
 		
 
-	}//main
-	
+		System.out.println(hgd.eat());
+		System.out.println(hgd.eat("뜨끈한 국밥", 40)); // 40푼
+		// 부모가 제공하는 기능이 자식에서 안 맞음
 
-}//class
+		// 자신만의 특징
+		System.out.println(hgd.fight(5)); // 6- > 7
+		System.out.println(hgd.fight(6)); // 7 -> 8
+		System.out.println(hgd.fight(8)); // 8
+		// instance 변수는 객체ㅐ가 생성되고 사용되는 기간동안 계속 유지가 된다
+		System.out.println(hgd.fight(9)); // 8 -> 7
+		System.out.println(hgd.fight(7)); // 7
+
+		
+		Clark superman = new Clark();
+		// 코드의 재사용성 : 부모의 method를 자식에서 자신의 것처럼 사
+		// hgd.setName("홍길동");
+		superman.setName("클락 켄트");
+		System.out.printf("눈 : %d, 코 : %d , 입 : %d , 이름 : %s\n", superman.getEye(), superman.getNose(),
+				superman.getMouth(), superman.getName());
+		System.out.println(superman.eat());
+		System.out.println(superman.eat("스테이크",10)); // 스테이크는 10불
+		
+		//자신만의 특징
+		
+		
+		
+		String stone = "크립토나이트";
+		System.out.println(stone+"는"+superman.power(stone));
+		
+		stone="다이아몬드";
+		System.out.println(stone+"는"+superman.power(stone));
+		
+		stone="짱똘";
+		System.out.println(stone+"은"+superman.power(stone));
+		
+		Dongwon dw = new Dongwon();
+		dw.setName("이동원");
+		System.out.printf("눈 : %d, 코 : %d, 입 : %d, 이름 : %s\n", dw.getEye(),dw.getNose(),dw.getMouth(),dw.getName());
+		
+		System.out.println(dw.getName()+"은 수영 "+dw.swim(70)+"입니다");
+		
+	}// main
+
+}// class
