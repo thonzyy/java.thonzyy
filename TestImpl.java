@@ -1,7 +1,11 @@
-package day0627;
-//public final class Clark extends Person 은 상속되지 않는다.
-public class TestImpl extends HongGilDong {// HongGilDong은 상속이 된다.
-	
-	
+package day0630;
+
+public class TestImpl implements Test {
+
+	@Override
+	public void test() {
+		System.out.println("Test 인터페이스의 구현 클래스!!");
+
+	}
 
 }
