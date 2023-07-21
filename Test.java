@@ -1,24 +1,15 @@
-package day0703;
+package day0720;
 
-public class Test {
+import javax.swing.JFrame;
 
-	public static void main(String[] args) {
+public class Test extends JFrame {
 
-		String str="오늘은 ";
-		
-		str+="7월의 첫 월요일 입니다.";
-		str+="아 덥다~~~~";
-		str+="이번 주 수요일은 휴강";
-		
-		System.out.println( str+"포항항항");
-		
-		StringBuilder sb=new StringBuilder("오늘은 ");
-		sb.append("7월의 첫 월요일 입니다.");
-		sb.append("아 덥다~~~~");
-		sb.append("이번 주 수요일은 휴강");
-		System.out.println(sb.append("포항항항"));
-		
-		
-	}
+	/**
+	 * 이 아이디는 23년 7월 20일까지만 유효합니다.
+	 */
+	private static final long serialVersionUID = -6983478492941795550L;
+	// serializable을 썼을 때 직렬화 되어 외부로 나가고 다시 내부로 들어오는 과정에서
+	// 보안상의 이유로 비밀번호 같이 자신이 내보낸 정보가 맞는지 확인
+	//
 
 }
